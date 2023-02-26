@@ -141,6 +141,11 @@ select s.id,s.name from student1 s where not exists((select course_id from cours
 
 no rows selected
 
+(NOTE:You could also use EXISTS to solve this problem, but it would require a slightly different approach. Using NOT EXISTS allows you to find all students who have taken all courses offered in the Biology department without having to explicitly count how many courses are offered in that department.
+
+To use EXISTS, you would need to count the number of courses offered in the Biology department and compare it to the number of courses the student has taken in that department. This would require a subquery that counts the number of courses in the Biology department, and then a main query that selects students who have taken at least that many courses in the Biology department.
+
+The NOT EXISTS approach is simpler because it allows you to directly check whether there is any course in the Biology department that the student has not taken, and then selects only those students for whom no such course exists.)
 
 
 
