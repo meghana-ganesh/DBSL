@@ -137,7 +137,9 @@ CS-101
 
 
 Q14.
+select s.id,s.name from student1 s where not exists((select course_id from course1 where dept_name='Biology' minus(select t.course_id from takes t where s.id=t.id)));
 
+no rows selected
 
 
 
