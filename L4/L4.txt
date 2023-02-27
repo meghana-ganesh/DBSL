@@ -458,7 +458,7 @@ ID    NAME                 DEPT_NAME                SALARY
 12 rows selected.
 
 SQL> rollback to C;
-
+Rollback complete.
 
 
 
@@ -513,6 +513,6 @@ SQL> rollback to D;
 
 Rollback complete.
 
-Rollback complete.
+
 
 
