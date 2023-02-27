@@ -173,3 +173,14 @@ Finance                    170000
 
 Q15.
 
+
+
+Q16.
+
+with total_credits(dept_name,total) as (select dept_name,sum(tot_cred) from student1 group by dept_name),finance_tot_cred(val) as (select sum(tot_cred) from student1 where dept_name='Finance') select t.dept_name,t.total from total_credits t,finance_tot_cred f where t.total > f.val;
+
+DEPT_NAME                 TOTAL
+-------------------- ----------
+Biology                     120
+Comp. Sci.                  246
+Elec. Eng.                  158
