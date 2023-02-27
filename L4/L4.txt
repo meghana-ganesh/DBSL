@@ -304,7 +304,59 @@ Rollback complete.
 
 Q19.
 
+savepoint C;
 
+Savepoint created.
+
+SQL> insert into department values('IT','AB5',95000);
+
+1 row created.
+
+SQL> select * from department;
+
+DEPT_NAME            BUILDING            BUDGET
+-------------------- --------------- ----------
+Biology              Watson               90000
+Comp. Sci.           Taylor              100000
+Elec. Eng.           Taylor               85000
+Finance              Painter             120000
+History              Painter              50000
+Music                Packard              80000
+Physics              Watson               70000
+IT                   AB5                  95000
+
+8 rows selected.
+
+SQL> update student1 set dept_name = 'IT' where dept_name = 'Comp. Sci.';
+
+4 rows updated.
+
+select * from student1;
+
+ID    NAME                 DEPT_NAME              TOT_CRED
+----- -------------------- -------------------- ----------
+00128 Zhang                IT                          102
+12345 Shankar              IT                           32
+19991 Brandt               History                      80
+23121 Chavez               Finance                     110
+44553 Peltier              Physics                      56
+45678 Levy                 Physics                      46
+54321 Williams             IT                           54
+55739 Sanchez              Music                        38
+70557 Snow                 Physics                       0
+76543 Brown                IT                           58
+76653 Aoi                  Elec. Eng.                   60
+
+ID    NAME                 DEPT_NAME              TOT_CRED
+----- -------------------- -------------------- ----------
+98765 Bourikas             Elec. Eng.                   98
+98988 Tanaka               Biology                     120
+
+13 rows selected.
+
+SQL> rollback to C;
+
+Rollback complete.
 
 
 
